@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en" data-astryx-theme="warm">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Reflow</title>
+<link rel="icon" href="assets/reflow-mark.svg" />
+<link rel="stylesheet" href="styles.css" />
+<script src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+</head>
+<body>
+<div class="app">
+  <!-- chat column (sidebar collapsed, as in the Plan view) -->
+  <section class="chat">
+    <div class="crumb">
+      <button class="ic-btn" aria-label="Open sidebar"><i data-lucide="panel-left"></i></button>
+      <span class="proj" id="projName">Battery Module Assembly Cell</span><span class="sep">/</span><span class="thread" id="threadName">Spring delivery check</span><i class="chev" data-lucide="chevron-down"></i>
+    </div>
+    <div class="msgs" id="msgs"></div>
+    <div class="composer">
+      <div class="ph">Message Reflow...</div>
+      <div class="row"><i data-lucide="plus"></i><button class="send" aria-label="Send"><i data-lucide="arrow-up"></i></button></div>
+    </div>
+  </section>
+
+  <!-- right panel -->
+  <section class="panel">
+    <div class="ptabs">
+      <div class="seg pill">
+        <button>Files</button><button>Requirements <span class="cnt">19</span></button><button class="on">Plan</button>
+      </div>
+      <div class="pt-right"><i data-lucide="maximize-2"></i><i data-lucide="x"></i></div>
+    </div>
+    <div class="pscroll" id="pscroll">
+      <div class="phead">
+        <div class="ph-left">
+          <div class="ph-row"><h1>Plan</h1>
+            <button class="pbtn">Working draft<i data-lucide="chevron-down"></i></button>
+            <button class="pbtn"><i data-lucide="save"></i>Save version</button>
+            <button class="pbtn"><i data-lucide="undo-2"></i>Discard</button>
+            <button class="ic-btn"><i data-lucide="download"></i></button>
+          </div>
+          <div class="ph-sub" id="planSub"></div>
+        </div>
+        <div class="ph-right">
+          <button class="pbtn conf on" id="confToggle"><i data-lucide="activity"></i>Confidence</button>
+          <div class="seg pill"><button>Weeks</button><button class="on">Months</button><button>Quarters</button></div>
+          <button class="ic-btn amber"><i data-lucide="corner-down-right"></i></button>
+          <button class="ic-btn"><i data-lucide="rotate-ccw"></i></button>
+          <button class="pbtn"><i data-lucide="plus"></i>New task</button>
+        </div>
+      </div>
+
+      <div class="dc" id="dc">
+        <div class="dc-top">
+          <div class="dc-title"><span class="dot"></span>Delivery confidence <span class="tag">Preview</span></div>
+          <div class="dc-meta" id="dcMeta"></div>
+        </div>
+        <div class="dc-grid">
+          <div class="stat"><div class="k">G9 Handover · plan</div><div class="v" id="sPlan"></div><div class="s" id="sPlanSub"></div></div>
+          <div class="stat"><div class="k">P50</div><div class="v" id="sP50"></div><div class="s" id="sP50Sub"></div></div>
+          <div class="stat"><div class="k">P80</div><div class="v" id="sP80"></div><div class="s" id="sP80Sub"></div></div>
+          <div class="stat hl"><div class="k" id="sTargetK"></div><div class="v" id="sTarget"></div><div class="s" id="sTargetSub"></div></div>
+          <div class="cdf" id="cdf"></div>
+        </div>
+        <div class="dc-ask">
+          <label>Target <input type="date" id="inTarget" /></label>
+          <label>Confidence <select id="inConf"><option value="0.5">50%</option><option value="0.7">70%</option><option value="0.8" selected>80%</option><option value="0.9">90%</option></select></label>
+          <label>Latest start for <select id="inTask"></select></label>
+          <div class="ask-out" id="askOut"></div>
+        </div>
+        <div class="drivers" id="drivers"></div>
+      </div>
+
+      <div class="gantt" id="gantt"></div>
+      <div class="foot">Unofficial concept demo by Mohith Gajjela. Not affiliated with Re:Build Manufacturing or Reflow. Synthetic data.</div>
+    </div>
+  </section>
+</div>
+<div class="tip" id="tip"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
