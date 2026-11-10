@@ -54,7 +54,8 @@ button { font-family: inherit; color: inherit; }
 .bot-h { display: flex; align-items: center; gap: 9px; font-size: 13.5px; font-weight: 500; margin-bottom: 8px; }
 .bot-mark { width: 24px; height: 24px; border-radius: 6px; background: var(--accent); display: inline-flex; align-items: center; justify-content: center; }
 .bot-mark img { width: 16px; height: 16px; }
-.bot-b { padding-left: 33px; font-size: 14.5px; line-height: 1.55; color: var(--text); }
+.bot-b { padding-left: 33px; font-size: 14.5px; line-height: 1.6; color: color-mix(in oklch, #0a1317 36%, #4e606f 64%); }
+.bot-b b { color: var(--text); }
 .bot-b p { margin: 0 0 10px; }
 .thinking { color: var(--text2); font-size: 13.5px; margin-bottom: 6px; }
 .thinking u { text-decoration: underline; text-underline-offset: 2px; }
