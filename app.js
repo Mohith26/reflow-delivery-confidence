@@ -216,6 +216,7 @@ function stageStatus(t) {
 function renderAll() {
   const st = stats();
   renderChat(st); renderCard(st); renderGantt(); icons();
+  const m = $('msgs'); m.scrollTop = m.scrollHeight; // chat opens at the latest message, like the app
 }
 
 document.addEventListener('mousemove', (e) => {
